@@ -1,8 +1,28 @@
 <?php
 session_start();
 include 'includes/db.php';
-?>
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $login_email = $_POST['login_email'];
+    $login_password = $_POST['login_password'];
+
+    // データベースからユーザー情報を取得する処理
+    $sql = "SELECT * FROM users WHERE email = :email AND password = :password";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':email', $login_email);
+    $stmt->bindParam(':password', $login_password);
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($user) {
+        $_SESSION['user_id'] = $user['id'];
+        header("Location: index.php"); // ログイン後にindex.phpにリダイレクト
+        exit();
+    } else {
+        echo "ログインに失敗しました。";
+    }
+}
+?>
+<!-- ログインフォームを表示するHTMLコード -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,18 +42,6 @@ include 'includes/db.php';
         <label for="login_password">パスワード:</label>
         <input type="password" id="login_password" name="login_password" required><br>
         <button type="submit">ログイン</button>
-    </form>
-
-        <h2>新規登録</h2>
-        <form action="register_process.php" method="POST">
-           <label for="username">ユーザー名:</label>
-            <input type="text" id="username" name="username" required><br>
-            <label for="register_email">Email:</label>
-            <input type="email" id="register_email" name="register_email" required><br>
-            <label for="register_password">パスワード:</label>
-            <input type="password" id="register_password" name="register_password" required><br>
-            <button type="submit">登録</button>
-        </form>
     </main>
 
     <footer>

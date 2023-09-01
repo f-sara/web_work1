@@ -1,11 +1,11 @@
 <?php
 try {
-    $db = new PDO(
+    $conn = new PDO(
         'mysql:dbname=mydb;host=localhost;',
         'root',
         'root'
     );
-    $stmt = $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+    $stmt = $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 } catch(PDOException $e) {
     echo 'DB connection error:'.$e->getMessage();
     exit(); 
