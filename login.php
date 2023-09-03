@@ -11,7 +11,7 @@ include 'includes/db.php';
 </head>
 <body>
     <header>
-        <h1>Pet Photo App</h1>
+        <h1 class="header-title">Pet Photo App</h1>
     </header>
 
     <main>

@@ -1,25 +1,50 @@
-photos {
-    display: flex;
-
-    gap: 30px;
- 
-    padding: 300px 0;
- 
-    max-width: 1000px;
- 
-    margin: 0 auto;
+header {
+    background-color: bisque;
+    height: 75px;
 }
 
-.photo {
-    width: 33.333%;
+.header-title {
+    padding: 20px 12px;
+    color:goldenrod;
 }
 
-.img_item {
-    width: 100%;
 
-    height: 300px;
- 
-    object-fit: cover;
- 
-    border: 1px solid #111;
+/* パソコン用 */
+@media screen and (min-width: 768px) {
+    .photos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .photo {
+        width: calc(25% - 20px);
+        margin-right: 20px;
+        overflow: hidden;
+    }
+
+    .photo img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* スマホ用 */
+@media screen and (max-width: 767px) {
+    .photos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .photo {
+        width: calc(50% - 20px);
+        margin-right: 20px;
+        overflow: hidden;
+    }
+
+    .photo img {
+        width: 100%;
+        height: auto;
+    }
 }
