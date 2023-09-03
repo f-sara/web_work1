@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome to Pet Photo App</title>
+    <title>Pet Photo App</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-     <h1>Welcome to Pet Photo App</h1>
+      <h1>Pet Photo App</h1>
     </header>
     <p>ログインまたは新規登録</p>
     <a href="login_process.php">ログイン</a>

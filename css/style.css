@@ -26,6 +26,10 @@ header h1 {
     text-align: center;
 }
 
+.search-bar {
+    margin-bottom: 15px;
+}
+
 
 /* パソコン用 */
 @media screen and (min-width: 768px) {
