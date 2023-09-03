@@ -1,12 +1,29 @@
 header {
+    display: flex;
     background-color: bisque;
     height: 70px;
+    padding: 10px 20px;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.header-title {
-    padding-top: 15px;
+header h1 {
     color:gray;
-    text-align:center
+    font-weight: bold;
+    float: left;
+}
+
+.upload-form-button {
+    margin-left: auto;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:white;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    width: 150px;
+    text-align: center;
 }
 
 
